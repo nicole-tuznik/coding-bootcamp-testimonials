@@ -1,0 +1,164 @@
+$dk-blue: hsl(240, 38%, 20%);
+$gray-blue: hsl(240, 18%, 77%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+  color: $dk-blue;
+  text-align: center;
+  margin: 0 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(/images/pattern-curve.svg) no-repeat bottom left;
+}
+
+.testimonial {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  
+
+  &__imgs {
+    // flex: 1;
+    background-image: url(/images/pattern-bg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 16rem;
+    position: relative;
+    top: 25px;
+    left: 0px;
+  }
+
+  &__slider {
+    background-color: white;
+    box-shadow: 0 8px 6px -6px black;
+    z-index: 10;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    
+  }
+
+  &__arrow {
+    margin: 1rem;
+  }
+
+  &__text {
+    // flex: 1;
+    padding-top: 1.5rem;
+    background: url(/images/pattern-quotes.svg) center top no-repeat;
+    background-size: 80px;
+    
+  }
+
+  &__quote {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__job {
+    font-size: 1rem;
+    opacity: 40%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  body {
+
+    text-align: left;
+    padding: 4rem;
+  }
+
+  .testimonial {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    
+
+    &__imgs {
+      flex: 3;
+      height: 36rem;
+      // flex: 1;
+      // height: 34rem;
+      // background-size: cover;
+      // width: 12rem;
+    }
+  
+    &__photo {
+      height: 80%;
+      width: 80%;
+    //  height: 27rem;
+    //  left: 60px;
+    //  top: 80px;
+    }
+  
+    &__slider {
+      left: -130px;
+      // top: 490px;
+      // left: 100px;
+    }
+  
+    &__arrow {
+ 
+    }
+  
+    &__text {
+     flex: 3;
+     z-index: 2;
+     margin-right: -130px;
+    //  width: 60rem;
+    //  background: url(/images/pattern-quotes.svg) 75px 0px no-repeat;
+    //  padding-top: 4rem;
+    //  z-index: 2;
+    //  margin-right: -130px;
+    }
+  
+    &__quote {
+      font-size: 2rem;
+    }
+
+    &__person-info {
+      display: flex;
+    }
+  
+    &__name {
+      margin-right: 1rem;
+    }
+  
+    &__job {
+   
+    }
+  
+  }
+}
