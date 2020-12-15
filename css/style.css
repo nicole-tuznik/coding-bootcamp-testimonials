@@ -87,6 +87,7 @@ body {
 
 .testimonial__arrow {
   margin: 1rem;
+  cursor: pointer;
 }
 
 .testimonial__text {
