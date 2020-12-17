@@ -40,7 +40,7 @@ body {
   background-image: url(/images/pattern-bg.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,19 +86,29 @@ body {
 }
 
 .testimonial__arrow {
-  margin: 1rem;
+  padding: 1rem;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.testimonial__arrow:hover {
+  opacity: 50%;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .testimonial__text {
   padding-top: 1.5rem;
+  margin: 0 1.5rem;
   background: url(/images/pattern-quotes.svg) center top no-repeat;
   background-size: 80px;
 }
 
 .testimonial__quote {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-bottom: 1rem;
+  font-weight: 300;
 }
 
 .testimonial__name {

@@ -1,6 +1,6 @@
 // Testimonials
 
-let person = [
+let testimonial = [
   {name: 'Tanya Sinclair',
   photo: '/images/image-tanya.jpg',
   quote: `"I’ve been interested in coding for a while but never taken the jump, until now. 
@@ -26,27 +26,49 @@ let name = document.querySelector('.testimonial__name');
 
 let previous = document.querySelector('.testimonial__previous');
 let next = document.querySelector('.testimonial__next');
- 
+
+let i = 0;
 
 // Event Listeners
-// previous.addEventListener('click', previousPerson);
+previous.addEventListener('click', previousPerson);
 next.addEventListener('click', nextPerson);
-// document.onkeydown = checkKey();
+document.addEventListener('keydown', checkKey);
 
 // Functions
-
-function nextPerson(i) {
-  for (let i = 0; i < person.length; i++) {
-    photo.src = person[i].photo;
-    quote.textContent = person[i].quote;
-    name.textContent = person[i].name;
-    job.textContent = person[i].job;
-  };
+function insertContent() {
+  photo.src = testimonial[i].photo;
+  quote.textContent = testimonial[i].quote;
+  name.textContent = testimonial[i].name;
+  job.textContent = testimonial[i].job;
 }
 
-// function changePerson(i) {
-//   photo.src = person[i].photo;
-//   quote.innerHTML = person[i].quote;
-//   name.innerHTML = person[i].name;
-//   job.innerHTML = person[i].job;
-// }
+function nextPerson(e) {
+  if (i === testimonial.length - 1) {
+    i = 0;
+    insertContent();
+  } else {
+    i++;
+    insertContent();
+  };
+};
+
+function previousPerson(e) {
+  if (i === 0) {
+    i = testimonial.length - 1;
+    insertContent();
+  } else {
+    i--;
+    insertContent();
+  }
+};
+
+function checkKey(e) {
+  switch (e.key) {
+    case 'ArrowLeft':
+      previousPerson();
+      break;
+    case 'ArrowRight':
+      nextPerson();
+      break;
+  }
+};
